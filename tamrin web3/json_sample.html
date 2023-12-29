@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo"></div>
+    <script>
+        let txt=`[{"userId":"id", "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit","body": "quia et suscipitnsuscipit recusandae consequuntur expedita et cumnreprehenderit molestiae ut ut quas totamnnostrum rerum est autem sunt rem eveniet architecto"},{"userId":"id","title": "qui est esse","body": "est rerum tempore vitaensequi sint nihil reprehenderit dolor beatae ea dolores nequenfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendisnqui aperiam non debitis possimus qui neque nisi nulla"},{"userId":"id","title": "ea molestias quasi exercitationem repellat qui ipsa sit aut","body": "et iusto sed quo iurenvoluptatem occaecati omnis eligendi aut adnvoluptatem doloribus vel accusantium quis pariaturnmolestiae porro eius odio et labore et velit aut"}]`;
+
+        let posts=JSON.parse(txt);
+        for(let i=0;i<posts.length;i++){
+            $('#demo').append(`
+            <div>
+                ${posts[i].title}
+                
+                `)
+        }
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ input{
+  width: 100px;
+  height: 30px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+ }
+ body{
+  background-color: #493c3c;
+ }
+
+ div{
+  text-align: center;
+  justify-content: center;
+ 
+ }
+
+
+
+</style>
+<body>
+
+
+
+
+
+
+    <div>
+      
+    </div>
+    <div id="demo"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+
+
+     
+            var settings = {
+  "url": "https://jsonplaceholder.typicode.com/albums",
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+    for (let i = 0;i <response.lenght;i++){
+
+  $('#demo').append(`<h2>${response[i].id}-${response[i].title}</h2>`);
+ 
+    }
+   
+});
+        
+    </script>
+</body>
+</html>

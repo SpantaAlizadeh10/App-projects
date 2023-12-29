@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+  
+</head>
+<body>
+    <div id="products" style="display: flex;flex-wrap: wrap;">
+    </div>
+    <script>
+        
+        let products=[{
+            id:105,
+            title:'this is product 1',
+            Image: "https://picsum.photos/id/655/600/400",
+            price : 2500,
+            description: 'lorem lorem',
+            inventory:21,
+        },
+
+
+        {
+            id:105,
+            title:'this is product 1',
+            Image: "https://picsum.photos/id/655/600/400",
+            price : 2500,
+            description: 'lorem lorem',
+            inventory:21,
+        },
+
+        {
+            id:105,
+            title:'this is product 1',
+            Image: "https://picsum.photos/id/655/600/400",
+            price : 2500,
+            description: 'lorem lorem',
+            inventory:21,
+        }
+    ];
+
+    let cart=[];
+    products.forEach(function(item){
+        document.getElementById('products').innerHTML+=`
+        <div class="product" style="width:33%; border:1px solid lighthray;">
+            <img src="${item.img}"alt="" style="width:100%;">
+            <h2>${item.title}</h2>
+            <p>${item.description}</p>
+            <p>inventry : ${item.inventory}</p>
+            <input value="0" data-product-count="${item.id}">
+            <button onclick="addToCart(${item.id})" style="width:100%; background-color:tomato">
+
+        
+        `
+    })
+
+    function addToCart(id){
+        let index=cart.findIndex(function(item){
+            return item.product_id==id
+        });
+
+        let p=getProductById(id)
+        if(index==-1){
+            cart.push({
+                product_id:id,
+                products_title:p.title,
+                products_price:p.price,
+                count:1,
+                total_price:p.price
+            })
+            document.querySelector(`[data-product-count="${p.id}"]`).value=1;
+        }else{
+            cart[index].count+=1;
+            cart[index].total_price=cart[index].count*cart[index].products_price;
+            document.querySelector(`[data-product-count="${p.id}"]`).value=cart[index].count;
+        }
+        console.log(cart);
+
+    }
+    function getProductById(id){
+        let index=products.findIndex(function(item){
+            return item.id==id
+        })
+        return products[index];
+    }
+    </script>
+</body>
+</html>

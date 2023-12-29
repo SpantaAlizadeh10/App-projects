@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+   <p> your name is <span id="num">0</span></p>
+   <button id="add">add</button>
+   <button id="minus">minus</button>
+    <script>
+        let num=0;
+        function updateNum(){
+         
+            if(num>10){
+                $('#num').css('color','green')
+            }else if(num<=10 && num>=0){
+                $('#num').css('color','tomato')
+            }else{
+                $('#num').css('color','red');
+            }
+            $('#num').text(num)
+        }
+        $('#add').click(function(){
+            num+=1;
+            updateNum();
+      
+        });
+
+        $('#minus').click(function(){
+            num-=1;
+          updateNum();
+        });
+    </script>
+</body>
+</html>

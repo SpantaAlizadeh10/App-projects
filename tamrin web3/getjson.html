@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ input{
+  width: 100px;
+  height: 30px;
+  background-color: antiquewhite;
+  border-radius: 10px;
+ }
+ body{
+  background-color: #493c3c;
+ }
+
+ div{
+  text-align: center;
+  justify-content: center;
+ 
+ }
+
+
+/* CSS */
+button {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+button :hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 10px 30px;
+  }
+}
+</style>
+<body>
+
+
+
+
+
+
+    <div>
+        <input type="text" id="searchInput"/>
+        <button id="searchBtn">search</button>
+    </div>
+    <div id="demo"></div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script>
+
+        $('#searchBtn').click(function(){
+            let id=$('#searchInput').val();
+            getById(id);
+
+        })
+
+
+
+
+        function getById(id){
+            var settings = {
+  "url": `https://jsonplaceholder.typicode.com/albums/${id}`,
+  "method": "GET",
+  "timeout": 0,
+};
+
+$.ajax(settings).done(function (response) {
+    $("#demo").empty();
+  console.log(response);
+  $('#demo').append(`<h1>${response.id}-${response.title}</h1>`);
+  $('#demo').append(`<h1>${response.title}</h1>`);
+});
+        }
+
+    </script>
+</body>
+</html>
