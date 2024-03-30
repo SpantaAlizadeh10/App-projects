@@ -2,44 +2,61 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Protest+Strike&family=Rubik:ital,wght@0,300..900;1,300..900&family=Scheherazade+New:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <title>Resume Gallery Web</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin:ital,wght@0,400..700;1,400..700&family=Protest+Strike&family=Rubik:ital,wght@0,300..900;1,300..900&family=Scheherazade+New:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
 </head>
 
 <body>
+  <div class="carousel">
+    <img src="images/sofa web 1.JPG" alt="sofa photo">
+    <blockquote class="testimonial">
+      <p class="testimonial-text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur neque, temporibus similique illum aut ut,
+        excepturi voluptates harum necessitatibus minus ratione error illo. Suscipit aspernatur nisi reiciendis
+        praesentium, laboriosam enim?
+      </p>
+      <p class="type">
+        sofa
+      </p>
+      <p class="personality">
+        minimalist
+      </p>
+    </blockquote>
 
-    <div class="container">
-        
-        <div class="panel active " style="background-image: url(images/sofa\ web\ 1.JPG)">
-            <!-- <img src="images/sofa web 1.JPG" alt=""> -->
-            <h1>Ui UX Sepanta</h1>
-        </div>
-       
-        <div class="panel " style="background-image: url(images/sofa\ 2.JPG);">
-            <h1>Ui UX Sepanta</h1>
-        </div>
+    <button class="btn btn--left">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="btn-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18" />
+      </svg>
 
-        <div class="panel " style="background-image: url(images/Aripport\ ui\ ux\ 1.JPG);">
-            <h1>Ui UX Sepanta</h1>
-        </div>
+    </button>
 
-        <div class="panel " style="background-image: url(images/Aripport\ ui\ ux\ 3.JPG);">
-            <h1>Ui UX Sepanta</h1>
-        </div>
 
-        <div class="panel " style="background-image: url(images/Aripport\ ui\ ux\ Finall.JPG);">
-            <h1>Ui UX Sepanta</h1>
-        </div>
+    <button class="btn btn--right">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+        class="btn-icon">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+      </svg>
+
+
+    </button>
+    <div class="dots">
+      <button class="dot dot--fill">&nbsp;</button>
+      <button class="dot">&nbsp;</button>
+      <button class="dot">&nbsp;</button>
+      <button class="dot">&nbsp;</button>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+
+  <script src="script.js"></script>
 
 </body>
 
