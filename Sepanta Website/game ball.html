@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #demo {
+        width: 25px;
+        height: 25px;
+        border: 1px solid blueviolet;
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-radius: 50px;
+        background-color: brown;
+        transition: 0.5s;
+      }
+
+      #win {
+        width: 10px;
+        height: 5px;
+        border-radius: 50px;
+        position: fixed;
+        background-color: black;
+        top: 325px;
+        left: 525px;
+      }
+    </style>
+  </head>
+  <body onkeyup="eventfn(event)">
+    <div id="demo"></div>
+    <div id="win"></div>
+    <script>
+      let topEl = 0;
+      let leftEl = 0;
+      function eventfn(e) {
+        let speed = 20;
+        if (e.key == "ArrowUp") {
+          topEl -= speed;
+        } else if (e.key == "ArrowDown") {
+          topEl += speed;
+        } else if (e.key == "ArrowRight") {
+          leftEl += speed;
+        } else if (e.key == "ArrowLeft") {
+          leftEl -= speed;
+        }
+
+        console.log(topEl);
+        document.getElementById("demo").style.top = `${topEl}px`;
+        document.getElementById("demo").style.left = `${leftEl}px`;
+
+        // if document.getElementById('demo').style.topEl=='320px'&& leftEl=='520px' {
+
+        // alert('you win');
+      }
+    </script>
+  </body>
+</html>
