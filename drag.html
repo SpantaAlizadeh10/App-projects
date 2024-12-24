@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: #f0f4f8;
+        margin: 0;
+        height: 100vh;
+      }
+
+      .board {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+      }
+
+      .column {
+        width: 300px;
+        background-color: #ffffff;
+        border: 2px solid #d1d9e6;
+        border-radius: 8px;
+        padding: 10px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .column h2 {
+        text-align: center;
+        color: #333;
+      }
+
+      .tasks {
+        min-height: 300px;
+        border: 2px dashed #d1d9e6;
+        border-radius: 8px;
+        padding: 10px;
+      }
+
+      .task {
+        background-color: #e0e7ff;
+        border: 1px solid #c7d2fe;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        cursor: grab;
+      }
+
+      .task.dragging {
+        opacity: 0.5;
+      }
+
+      #add-task-container {
+        margin: 20px 0;
+        display: flex;
+        gap: 10px;
+      }
+
+      #task-input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      #add-task-btn {
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="add-task-container">
+        <input
+          type="text"
+          id="task-input"
+          placeholder="Enter your task here..."
+        />
+        <button id="add-task-btn">Add Task</button>
+      </div>
+      <div class="board">
+        <div class="column" id="todo">
+          <h2>To Do</h2>
+          <div class="tasks"></div>
+        </div>
+        <div class="column" id="in-progress">
+          <h2>In Progress</h2>
+          <div class="tasks"></div>
+        </div>
+        <div class="column" id="done">
+          <h2>Done</h2>
+          <div class="tasks"></div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
